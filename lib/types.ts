@@ -13,6 +13,7 @@ export enum NidErrorCode {
   DOB_INVALID = -4,
   INPUT_INVALID = -5,
   INTERNAL_SERVER_ERROR = -6,
+  REQUEST_INVALID = -7,
 }
 
 export type NidError = {

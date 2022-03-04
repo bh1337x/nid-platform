@@ -6,6 +6,11 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<NidData | NidError>
 ) {
+  if (req.method !== "POST")
+    return res.status(405).json({
+      error: "Invalid Request!",
+      code: NidErrorCode.REQUEST_INVALID,
+    });
   const { nid, dob } = req.body;
   if (!nid) {
     return res.status(400).json({
